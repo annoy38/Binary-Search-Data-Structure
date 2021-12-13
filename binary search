@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{
+    char a[50]={'a','c','e','g','j','k','s'},search;
+    int min,max,mid,i;
+    printf("Enter your Search number = ");
+    scanf("%c",&search);
+    min=0;
+    max=10;
+    for(i=0;i<50;i++)
+    {
+    mid=(min+max)/2;
+    if(a[mid]==search)
+    {
+        printf("\nYour Seraching Number position is %d and it's value is %c\n",mid+1,a[mid]);
+        break;
+    }
+    else if(min>max)
+    {
+        printf("This element is not here in the Array\n");
+        break;
+    }
+    else if(a[mid]<search)
+    {
+        min=mid+1;
+    }
+    else
+    {
+        max=mid-1;
+    }
+    }
+    return 0;
+}
